@@ -70,14 +70,15 @@
 
 <script>
  
+   var framed_idx = document.getElementById('framed_idx');    
+
   for (var i = 30; i<= 130; i++){
     var option = document.createElement('option');
     option.value = i;
     option.innerHTML = i;
-    select.options.add(option);
+    framed_idx.options.add(option);
   }
  
-  var framed_idx = document.getElementById('framed_idx');    
   var image_links = getLinks(framed_idx);
  
   var slideIndex = 1;
