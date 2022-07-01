@@ -61,18 +61,25 @@
 
   <h3 id='caption1'>Caption</h3>
  
- <div id="down" class="center">
-        <p >Framed #</p>
-        <select id="length">
-        </select>          
-    </div>
- 
+  <div id="down" class="center">
+      <p >Framed #</p>
+      <select id="framed_idx"></select>          
+  </div>
+
 </div>
 
 <script>
-
-  var image_links = getLinks();
-
+ 
+  for (var i = 30; i<= 130; i++){
+    var option = document.createElement('option');
+    option.value = i;
+    option.innerHTML = i;
+    select.options.add(option);
+  }
+ 
+  var framed_idx = document.getElementById('framed_idx');    
+  var image_links = getLinks(framed_idx);
+ 
   var slideIndex = 1;
   showDivs2(slideIndex);
 
@@ -112,15 +119,9 @@
 
   }
 
-  var select = document.getElementById('length');    
-  for (var i = 30; i<= 120; i++){
-
-      var option = document.createElement('option');
-      option.value = i;
-      option.innerHTML = i;
-      select.options.add(option);
-  }
-
+ 
+ 
+ 
   // enter title and screen images below
     
   function getPageTitle() {
@@ -131,16 +132,16 @@
       return "";
   }
 
-  function getLinks() {
+  function getLinks(idx) {
   
       return [
       '',
-      'https://framed.wtf/images/130/001.jpeg',
-      'https://framed.wtf/images/130/002.jpeg',   
-      'https://framed.wtf/images/130/003.jpeg',     
-      'https://framed.wtf/images/130/004.jpeg',
-      'https://framed.wtf/images/130/005.jpeg',
-      'https://framed.wtf/images/130/006.jpeg'
+      'https://framed.wtf/images/' + idx + '/001.jpeg',
+      'https://framed.wtf/images/' + idx + '/002.jpeg',
+      'https://framed.wtf/images/' + idx + '/003.jpeg',
+      'https://framed.wtf/images/' + idx + '/004.jpeg',
+      'https://framed.wtf/images/' + idx + '/005.jpeg',
+      'https://framed.wtf/images/' + idx + '/006.jpeg'
       ];
   }
   
