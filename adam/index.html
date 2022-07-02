@@ -40,52 +40,87 @@
   
   .mySlides {display:none;} 
  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-  li {
-    float: left;
-    border-right:1px solid #bbb;
-  }
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-  li:last-child {
-    border-right: none;
-  }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
 
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
 
-  .active {
-    background-color: #04AA6D;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 
 <body>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
- <br></br>
- <ul>
-  <li><a class="active" style="float:left" href="https://adichiara.github.io/reframed/index.html">RE-FRAMED [ by Adam ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/rishi/index.html">[ by Rishi ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/ameet/index.html">[ by Ameet ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/gary/index.html">[ by Gary ]</a></li>
-</ul>
  
-<div class="w3-content w3-display-container">
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">RE-FRAMED 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="adam/index.html">[ by Adam ]</a>
+      <a href="rishi/index.html">[ by Rishi ]</a>
+      <a href="ameet/index.html">[ by Ameet ]</a>
+      <a href="gary/index.html">[ by Gary ]</a>
+    </div>
+  </div> 
+</div>
+<br></br>  
+
+ <div class="w3-content w3-display-container">
     <img id='slide1' src="" style="width:100%">
  </div>
 
