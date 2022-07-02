@@ -38,14 +38,51 @@
   p {color: white;} 
   
   .mySlides {display:none;} 
+ 
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: left;
+    border-right:1px solid #bbb;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
 </style>
 
 <body>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
-
-<h2 id="page-title" class="w3-center">RE-FRAMED</h2>
-
+ <ul>
+  <li><a class="active" style="float:left" href="https://adichiara.github.io/reframed/index.html">RE-FRAMED [ by Adam ]</a></li>
+  <li><a href="https://adichiara.github.io/reframed/rishi/index.html">[ by Rishi ]</a></li>
+  <li><a href="https://adichiara.github.io/reframed/ameet/index.html">[ by Ameet ]</a></li>
+  <li><a href="https://adichiara.github.io/reframed/gary/index.html">[ by Gary ]</a></li>
+</ul>
+ 
 <div class="w3-content w3-display-container">
     <img id='slide1' src="" style="width:100%">
  </div>
@@ -103,7 +140,6 @@
       slideIndex = 6;
     }
     
-    document.getElementById("page-title").textContent = getPageTitle();
     document.getElementById('slide1').src = image_links[slideIndex];
 
     var slide_buttons = document.getElementsByClassName("slide_btn");  
@@ -122,10 +158,6 @@
   }
 
   // enter title and screen images below
-    
-  function getPageTitle() {
-      return "RE-FRAMED #4";
-  }
 
   function getCaption() {
       return "Ghostbusters";
