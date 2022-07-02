@@ -1,3 +1,4 @@
+
  <!DOCTYPE html>
 <html>
 <!-- HTML Meta Tags -->
@@ -9,7 +10,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://adichiara.github.io/reframed/index.html">
+<meta property="og:url" content="https://adichiara.github.io/reframed/adam/index.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RE-FRAMED [ by Adam ]">
 <meta property="og:description" content="RE-FRAMED: Like Framed, but different.">
@@ -18,13 +19,14 @@
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="">
-<meta property="twitter:url" content="https://adichiara.github.io/reframed/index.html">
+<meta property="twitter:url" content="https://adichiara.github.io/reframed/adam/index.html">
 <meta name="twitter:title" content="RE-FRAMED [ by Adam ]">
 <meta name="twitter:description" content="RE-FRAMED: Like Framed, but different.">
 <meta name="twitter:image" content="reframed_logo.png">
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
 <style>
   body {
    background-color: black;
@@ -39,142 +41,85 @@
   
   .mySlides {display:none;} 
  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
 
-  li {
-    float: left;
-    border-right:1px solid #bbb;
-  }
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-  li:last-child {
-    border-right: none;
-  }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
 
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
 
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
 
-  .active {
-    background-color: #04AA6D;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 </style>
 
 <body>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
 
- <ul>
-  <li><a class="active" style="float:left" href="https://adichiara.github.io/reframed/index.html">RE-FRAMED [ by Adam ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/rishi/index.html">[ by Rishi ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/ameet/index.html">[ by Ameet ]</a></li>
-  <li><a href="https://adichiara.github.io/reframed/gary/index.html">[ by Gary ]</a></li>
-</ul>
  
-<div class="w3-content w3-display-container">
-    <img id='slide1' src="" style="width:100%">
- </div>
-
-<div class="w3-center">
-  <div class="w3-section">
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-  </div>
-
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(1)">1</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(2)">2</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(3)">3</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(4)">4</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(5)">5</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(6)">6</button> 
-
-  <h3 id='caption1'> </h3>
-
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">RE-FRAMED 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="../adam/index.html">[ by Adam ]</a>
+      <a href="../rishi/index.html">[ by Rishi ]</a>
+      <a href="../ameet/index.html">[ by Ameet ]</a>
+      <a href="../gary/index.html">[ by Gary ]</a>
+    </div>
+  </div> 
 </div>
 
  
-<!-- <div>
- <a color='white' href="https://adichiara.github.io/reframed/misc/framed.html">View Framed Images</a>
-</div> -->
-
-<script>
-
-  var image_links = getLinks();
-
-  var slideIndex = 1;
-  showDivs2(slideIndex);
-
-  function plusDivs(n) {
-    showDivs2(slideIndex += n);
-  }
-
-  function currentDiv(n) {
-    showDivs2(slideIndex = n);
-  }
-
-  function showDivs2(n) {
-    if (n > 6) {
-      n = 1;
-      slideIndex = 1;
-    }    
-    if (n <= 0) {
-      n = 6;
-      slideIndex = 6;
-    }
-    
-    document.getElementById('slide1').src = image_links[slideIndex];
-
-    var slide_buttons = document.getElementsByClassName("slide_btn");  
-    for (i = 0; i < 6; i++) {
-      slide_buttons[i].className = slide_buttons[i].className.replace(" w3-red", " w3-dark-gray");
-    }
-    
-    if (slideIndex == 6) 
-      document.getElementById("caption1").textContent = getCaption();
-    else 
-      document.getElementById("caption1").textContent = " ";
-
-    slide_buttons[slideIndex-1].className = slide_buttons[slideIndex-1].className.replace(" w3-dark-gray", " w3-red"); 
-    document.getElementById("check2").textContent = slide_buttons[i].className;
-
-  }
-
-  // enter title and screen images below
-
-  function getCaption() {
-      return "Ghostbusters";
-  }
-
-  function getLinks() {
-  
-      return [
-      '',
-      'https://mvcdn.fancaps.net/740789.jpg',
-      'https://mvcdn.fancaps.net/739158.jpg',   
-      'https://mvcdn.fancaps.net/739660.jpg',     
-      'https://mvcdn.fancaps.net/741164.jpg',
-      'https://mvcdn.fancaps.net/741601.jpg',
-      'https://mvcdn.fancaps.net/741958.jpg'
-      ];
-  }
-  
-</script>
-
-
-
-
-
 </body>
-</html>
+</html
