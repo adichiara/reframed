@@ -4,22 +4,22 @@
 <title>RE-FRAMED</title>
 <!-- <meta name="description" content=""> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-a
+
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://adichiara.github.io/reframed/rishi/index.html">
+<meta property="og:url" content="https://adichiara.github.io/reframed/adam/index.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RE-FRAMED [ by Rishi ]">
+<meta property="og:title" content="RE-FRAMED [ by Adam ]">
 <meta property="og:description" content="RE-FRAMED: Like Framed, but different.">
 <meta property="og:image" content="reframed_logo.png">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="">
-<meta property="twitter:url" content="https://adichiara.github.io/reframed/rishi/index.html">
-<meta name="twitter:title" content="RE-FRAMED [ by Rishi ]">
+<meta property="twitter:url" content="https://adichiara.github.io/reframed/adam/index.html">
+<meta name="twitter:title" content="RE-FRAMED [ by Adam ]">
 <meta name="twitter:description" content="RE-FRAMED: Like Framed, but different.">
 <meta name="twitter:image" content="reframed_logo.png">
 
@@ -27,19 +27,48 @@ a
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
 <style>
-  body {
-   background-color: black;
-   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 12px; 
- }  
-  h1 {color: white;} 
-  h2 {color: white;} 
-  h3 {color: white;} 
-  h4 {color: white;} 
-  p {color: white;} 
-  
-  .mySlides {display:none;} 
- 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url('https://film-grab.com/wp-content/uploads/photo-gallery/Avengers_Endgame_044.jpg?bwg=1569515968');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.topright {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+
+
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -102,8 +131,6 @@ a
 </style>
 
 <body>
-<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
-
  
 <div class="navbar">
   <div class="dropdown">
@@ -118,99 +145,15 @@ a
     </div>
   </div> 
 </div>
-<br></br>  
 
- <div class="w3-content w3-display-container">
-    <img id='slide1' src="" style="width:100%">
- </div>
-
-<div class="w3-center">
-  <div class="w3-section">
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+<div class="bgimg">
+ <div class="middle">
+ 	<h3>[ by Ameet ]</h3>
+    <h1>COMING SOON</h1>
+   
   </div>
-
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(1)">1</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(2)">2</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(3)">3</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(4)">4</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(5)">5</button> 
-  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(6)">6</button> 
-
-  <h3 id='caption1'> </h3>
-
+  
 </div>
-
- 
-<!-- <div>
- <a color='white' href="https://adichiara.github.io/reframed/misc/framed.html">View Framed Images</a>
-</div> -->
-
-<script>
-
-  var image_links = getLinks();
-
-  var slideIndex = 1;
-  showDivs2(slideIndex);
-
-  function plusDivs(n) {
-    showDivs2(slideIndex += n);
-  }
-
-  function currentDiv(n) {
-    showDivs2(slideIndex = n);
-  }
-
-  function showDivs2(n) {
-    if (n > 6) {
-      n = 1;
-      slideIndex = 1;
-    }    
-    if (n <= 0) {
-      n = 6;
-      slideIndex = 6;
-    }
-    
-    document.getElementById('slide1').src = image_links[slideIndex];
-
-    var slide_buttons = document.getElementsByClassName("slide_btn");  
-    for (i = 0; i < 6; i++) {
-      slide_buttons[i].className = slide_buttons[i].className.replace(" w3-red", " w3-dark-gray");
-    }
-    
-    if (slideIndex == 6) 
-      document.getElementById("caption1").textContent = getCaption();
-    else 
-      document.getElementById("caption1").textContent = "";
-
-    slide_buttons[slideIndex-1].className = slide_buttons[slideIndex-1].className.replace(" w3-dark-gray", " w3-red"); 
-    document.getElementById("check2").textContent = slide_buttons[i].className;
-
-  }
-
-  // enter title and screen images below
-
-  function getCaption() {
-      return "";
-  }
-  
-  function getLinks() {
-      return [
-      '',        
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3573816.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3574675.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3574385.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3575211.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3576020.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/3574682.jpg'
-      ];
-  }
-  
-</script>
-
-
-
-
 
 </body>
 </html>
