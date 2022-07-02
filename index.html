@@ -63,7 +63,7 @@
   <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(5)">5</button> 
   <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(6)">6</button> 
 
-  <h3 id='caption1'>Caption</h3>
+  <h3 id='caption1'> </h3>
 
 </div>
  
@@ -114,7 +114,7 @@
     if (slideIndex == 6) 
       document.getElementById("caption1").textContent = getCaption();
     else 
-      document.getElementById("caption1").textContent = "";
+      document.getElementById("caption1").textContent = " ";
 
     slide_buttons[slideIndex-1].className = slide_buttons[slideIndex-1].className.replace(" w3-dark-gray", " w3-red"); 
     document.getElementById("check2").textContent = slide_buttons[i].className;
