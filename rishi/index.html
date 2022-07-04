@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- HTML Meta Tags -->
-<title>RE-FRAMED</title>
+<title>RE-FRAMED [ by Rishi ]</title>
 <!-- <meta name="description" content=""> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -103,7 +103,6 @@
 
 <body>
 <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
-
  
 <div class="navbar">
   <div class="dropdown">
@@ -141,52 +140,8 @@
 
 </div>
 
- 
-<!-- <div>
- <a color='white' href="https://adichiara.github.io/reframed/misc/framed.html">View Framed Images</a>
-</div> -->
 
 <script>
-
-  var image_links = getLinks();
-
-  var slideIndex = 1;
-  showDivs2(slideIndex);
-
-  function plusDivs(n) {
-    showDivs2(slideIndex += n);
-  }
-
-  function currentDiv(n) {
-    showDivs2(slideIndex = n);
-  }
-
-  function showDivs2(n) {
-    if (n > 6) {
-      n = 1;
-      slideIndex = 1;
-    }    
-    if (n <= 0) {
-      n = 6;
-      slideIndex = 6;
-    }
-    
-    document.getElementById('slide1').src = image_links[slideIndex];
-
-    var slide_buttons = document.getElementsByClassName("slide_btn");  
-    for (i = 0; i < 6; i++) {
-      slide_buttons[i].className = slide_buttons[i].className.replace(" w3-red", " w3-dark-gray");
-    }
-    
-    if (slideIndex == 6) 
-      document.getElementById("caption1").textContent = getCaption();
-    else 
-      document.getElementById("caption1").textContent = "";
-
-    slide_buttons[slideIndex-1].className = slide_buttons[slideIndex-1].className.replace(" w3-dark-gray", " w3-red"); 
-    document.getElementById("check2").textContent = slide_buttons[i].className;
-
-  }
 
   // enter title and screen images below
 
@@ -197,16 +152,22 @@
   function getLinks() {
       return [
       '',  
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5398764.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5397943.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5398804.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5397565.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5400414.jpg',
-        'https://cdni.fancaps.net/file/fancaps-movieimages/5401127.jpg'
-];
-  }
+
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4555147.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4552793.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4552560.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4554465.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4553245.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/4555573.jpg'
+        
+      ];
+}
   
+
 </script>
+
+<script type='text/javascript' language='javascript' src='../main.js'/></script>
+
 
 
 
