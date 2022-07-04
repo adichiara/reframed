@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- HTML Meta Tags -->
-<title>RE-FRAMED</title>
+<title>RE-FRAMED [ by Ameet ]</title>
 <!-- <meta name="description" content=""> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,48 +27,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
 <style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
-
-.bgimg {
-  background-image: url('https://film-grab.com/wp-content/uploads/photo-gallery/Finding_Nemo_040.jpg');
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 25px;
-}
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 16px;
-}
-
-.topright {
-  position: absolute;
-  bottom: 0;
-  right: 16px;
-}
-
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-hr {
-  margin: auto;
-  width: 40%;
-}
-
-
+  body {
+   background-color: black;
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px; 
+ }  
+  h1 {color: white;} 
+  h2 {color: white;} 
+  h3 {color: white;} 
+  h4 {color: white;} 
+  p {color: white;} 
+  
+  .mySlides {display:none;} 
+ 
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -131,6 +102,7 @@ hr {
 </style>
 
 <body>
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
  
 <div class="navbar">
   <div class="dropdown">
@@ -145,15 +117,56 @@ hr {
     </div>
   </div> 
 </div>
+<br></br>  
 
-<div class="bgimg">
- <div class="middle">
- 	<h3>[ by Ameet ]</h3>
-    <h1>COMING SOON</h1>
-   
+ <div class="w3-content w3-display-container">
+    <img id='slide1' src="" style="width:100%">
+ </div>
+
+<div class="w3-center">
+  <div class="w3-section">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
-  
+
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(1)">1</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(2)">2</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(3)">3</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(4)">4</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(5)">5</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(6)">6</button> 
+
+  <h3 id='caption1'> </h3>
+
 </div>
+
+
+<script>
+
+  // enter title and screen images below
+
+  function getCaption() {
+      return "";
+  }
+
+  function getLinks() {
+  
+      return [
+      '',
+      'https://cdni.fancaps.net/file/fancaps-movieimages/1245035.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/1246236.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/1245311.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/1245495.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/1245951.jpg',
+        'https://cdni.fancaps.net/file/fancaps-movieimages/1248502.jpg'
+];
+  }
+
+</script>
+
+<script type='text/javascript' language='javascript' src='../main.js'/></script>
+
+
 
 </body>
 </html>
