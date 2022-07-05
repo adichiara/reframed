@@ -30,22 +30,42 @@ var tabulate = function (data,columns) {
 }
 
 
+
 source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Rishi";
 
 var dataset;
+    
 
-d3.csv(source_url, convertData, function(data){
-    dataset = data;
-});
+d3.csv(source_url)
+  .row(function(d) { 
+  return {
+    game_num : +d.game_num, 
+    order : +d.order,
+    url: d.url
+    }; 
+   })
+  .get(function(error, rows) { 
+    //console.log(rows); 
+    var columns = ['game_num','order','url'];
+    //tabulate(rows, columns);
+    dataset = rows;
+    });
 
-function convertData(d){
-    d.game_num = +d.game_num;
-    d.order = +d.order;
-    return d;
-}
 
-var columns = ['game_num','order','url'];
-tabulate(dataset, columns);
+setTimeout(function(){    
+    console.log(dataset.length);
+
+		game_num_array = 
+
+    var select = '';
+    for (i=1;i<=dataset.length;i++){
+      select += '<option val=' + i + '>' + i + '</option>';
+    }
+    $('#game_select').html(select);
+
+}, 2000);
+
+
 
 
 
