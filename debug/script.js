@@ -29,7 +29,19 @@ var tabulate = function (data,columns) {
   return table;
 }
 
+/*
 d3.csv('data.csv',function (data) {
 	var columns = ['variable','aror','asd','maxdd']
   tabulate(data,columns)
 })
+*/
+
+sourcefile = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/edit#gid=1206004629";
+
+d3.csv(sourcefile,function (data) {
+	var columns = ['game_num','order','url']
+  tabulate(data,columns)
+})
+
+
+
