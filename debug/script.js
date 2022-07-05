@@ -37,7 +37,9 @@ d3.csv('data.csv',function (data) {
 */
 
 sourcefile = 
-"https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/edit?usp=sharing"; 
+//"https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/edit?usp=sharing";
+"https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/edit#gid=1206004629";
+
 
 d3.csv(sourcefile,function (data) {
 	var columns = ['game_num','order','url']
