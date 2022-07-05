@@ -16,13 +16,16 @@ document.write("<p>Hello World!</p>");
 
 var dataset;  //global data variable for use outside callback function
 
-// import csv file
-d3.csv(source, function(error, data) {
-  	document.write(error);
-  	document.write("data!");
-  	document.write(data);
-    dataset = data; // save to global variable:  dataset
-});
+  d3.csv(source, function(error, data) {
+      data.forEach(function(d) {
+          d.game_num = +d.game_num;
+          d.order = +d.order;
+      });      
+    dataset = data;
+  });
+
+  document.write(dataset);
+   
 
   </script>
 
