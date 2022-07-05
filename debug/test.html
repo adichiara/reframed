@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<!-- <script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script> -->
+
+<script type="text/JavaScript" src="'https://d3js.org/d3.v7.min.js"></script>
+
+<script>
+source = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/edit#gid=1206004629";
+
+/* d3.csv(source, function(error,data) {
+    for (var i = 0; i < data.length; i++) {
+        console.log(data);
+        console.log(data[i].game_num);
+        console.log(data[i].order);
+        console.log(data[i].url);
+    }
+});
+*/
+
+document.write("<p>Hello World!</p>");
+
+var dataset;  //global data variable for use outside callback function
+
+// import csv file
+d3.csv(source, function(data) {
+/* 	if (error){ 
+	    document.write("<p>error!</p>");
+	    } */
+//else {
+  	document.write("<p>data!</p>");
+    dataset = data; // save to global variable:  dataset
+  //  }
+});
+  
+  
+
+</body>
+</html>
+
+</script>
