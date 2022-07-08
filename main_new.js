@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
 
-	
 	function getLinks() {
 		return [
 			'https://mvcdn.fancaps.net/1533120.jpg',
@@ -81,6 +80,5 @@ $(document).ready(function () {
 		updateButtonColor(slideIndex);
 		console.log(slideIndex);
 	}
-
 
 });
