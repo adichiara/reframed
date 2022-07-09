@@ -37,8 +37,9 @@ $(document).ready(function () {
 		var game_num_filter;
 		var game_nums = getUniqueValues(dataset, "game_num");
 		var max_game_num = d3.max(game_nums);
+		var slideIndex = 0;
 
-		//populate dropdown
+		//populate archive dropdown
 		var mySelect = $('#num_select');
 		$.each(game_nums, function(val, text) {
 			mySelect.append(
@@ -54,6 +55,7 @@ $(document).ready(function () {
 		$("#num_select").change(function (event) {
 			game_num_filter = game_nums[$(this).val()];
 			image_links = filterData(dataset, 'game_num', game_num_filter);
+			console.log('filterImageLinks: ' + game_num_filter);
 			updateSlideIndex(0);
 		});
 		
@@ -83,7 +85,6 @@ $(document).ready(function () {
 			});
 		});
 		
-		var slideIndex = 0;
 		updateSlideIndex(slideIndex);
 	
 
@@ -114,6 +115,7 @@ $(document).ready(function () {
 				n = image_links.length - 1;
 			}		
 			slideIndex = n;
+			console.log('updateSlideIndex: ' + slideIndex);
 			showSlide(slideIndex);
 			updateButtonColor(slideIndex);
 		}
