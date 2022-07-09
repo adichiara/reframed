@@ -10,6 +10,7 @@ $(document).ready(function () {
 		d.url = d.url;
 		return d;
 	}).then(function(dataset) {
+
 		//  do everything here:
 		
 		function getUniqueValues(d, key) {
@@ -51,9 +52,9 @@ $(document).ready(function () {
 
 		// update image_links on change in dropdown selection
 		$("#num_select").change(function (event) {
-		game_num_filter = game_nums[$(this).val()];
-		image_links = filterData(dataset, 'game_num', game_num_filter);
-		// console.log(image_links);
+			game_num_filter = game_nums[$(this).val()];
+			image_links = filterData(dataset, 'game_num', game_num_filter);
+			updateSlideIndex(0);
 		});
 		
 		// setup left right buttons
@@ -68,7 +69,6 @@ $(document).ready(function () {
 
 		// setup image number buttons
 		image_links.forEach(function (item, index) {
-			console.log(item, index);
 			id_name = 'btn_' + index+1;
 			$('#num_button_area').append(
 				$(document.createElement('button')).prop({
@@ -109,29 +109,18 @@ $(document).ready(function () {
 		function updateSlideIndex(n) {
 			if (n == image_links.length) {
 				n = 0;
-				//slideIndex = 0;
 			}    
 			if (n < 0) {
 				n = image_links.length - 1;
-				//slideIndex = image_links.length - 1;
 			}		
 			slideIndex = n;
 			showSlide(slideIndex);
 			updateButtonColor(slideIndex);
-			console.log(slideIndex);
 		}
 
-
-	});	
-
+	});
 });
 
-
-
-	// document.getElementById("slide1").src=filtered_data[0];
-
-	// document.getElementById("slide1").src=filtered_data[0];
-		
 
 
 	
