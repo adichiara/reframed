@@ -28,10 +28,8 @@
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
  
 <body>
-<script>
-var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Rishi";
-</script>
-  
+<script type="text/JavaScript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" ></script>
+ 
 <div class="navbar">
   <div class="dropdown">
     <button class="dropbtn">RE-FRAMED 
@@ -46,36 +44,58 @@ var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5j
   </div> 
 </div>
 <br></br>  
- 
-  <div class="w3-content w3-display-container">
-     <img id='slide1' style="width:100%">
-     </div>
-  
-    <div class="w3-center">
-      <div class="w3-section">
-        <button id="left_btn" class="w3-button w3-black w3-display-left">&#10094;</button>
-        <button  id="right_btn" class="w3-button w3-black w3-display-right">&#10095;</button>
-      </div>
-    </div>
-  
-    <div class="w3-center">
-      <div class="w3-section">
-        <div id='num_button_area'></div>
-      </div>
-    </div>
-    
-  <br></br>
-  <div class="w3-center">
-  <h5>
-    <label for="num_select">Archive:</label>
-    <select id='num_select' name='num_select'></select>
-  </h5>
+
+ <div class="w3-content w3-display-container">
+    <img id='slide1' src="" style="width:100%">
+ </div>
+
+<div class="w3-center">
+  <div class="w3-section">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
   </div>
+
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(1)">1</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(2)">2</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(3)">3</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(4)">4</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(5)">5</button> 
+  <button class="w3-button slide_btn w3-dark-gray" onclick="currentDiv(6)">6</button> 
+
+  <h3 id='caption1'> </h3>
+
+</div>
+
+
+<script>
+
+  // enter title and screen images below
+
+  function getCaption() {
+      return "";
+  }
   
-  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/d3js/7.6.1/d3.min.js"></script>
-  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-  <script type="text/JavaScript" src="../main2.js" ></script>
+  function getLinks() {
+      return [
+      '',  
+'https://cdni.fancaps.net/file/fancaps-movieimages/4614406.jpg',
+'https://cdni.fancaps.net/file/fancaps-movieimages/4615212.jpg',
+'https://cdni.fancaps.net/file/fancaps-movieimages/4615890.jpg',
+'https://cdni.fancaps.net/file/fancaps-movieimages/4616816.jpg',
+'https://cdni.fancaps.net/file/fancaps-movieimages/4618722.jpg',
+'https://cdni.fancaps.net/file/fancaps-movieimages/4617636.jpg'
+];
+}
   
-  </body>
-  </html>
-  
+
+</script>
+
+<script type='text/javascript' language='javascript' src='../main.js'/></script>
+
+
+
+
+
+
+</body>
+</html>

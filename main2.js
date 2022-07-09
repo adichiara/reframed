@@ -2,8 +2,6 @@
 
 $(document).ready(function () {
 
-	var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Rishi";
-
 	d3.csv(source_url, function(d) {
 		d.game_num = +d.game_num;
 		d.order = +d.order;
