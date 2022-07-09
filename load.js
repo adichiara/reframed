@@ -1,4 +1,5 @@
 
+$(document).ready(function () {
 
 var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Rishi";
 
@@ -13,3 +14,5 @@ var dataset = await d3.dsv(",", source_url, (d) => {
 });
 
 console.log(dataset);
+
+});
