@@ -70,9 +70,9 @@ $(document).ready(function () {
 		function getImageLinks(d) {
 			var links = [];
 			for (var i = 0; i < d.length; i++) {
-				if (typeof(d.url)=='string') { 
+				// if (typeof(d.url)=='string') { 
 					links.push(d[i].url);
-				}
+				// }
 			}
 			return links;
 		}
