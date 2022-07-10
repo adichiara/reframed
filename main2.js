@@ -77,6 +77,7 @@ $(document).ready(function () {
 			return links;
 		}
 		var image_links = getImageLinks(filtered_data);
+		console.log(image_links);
 	
 
 		function getTitle() {
