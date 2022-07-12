@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- HTML Meta Tags -->
-<title>RE-FRAMED [ by Adam ]</title>
+<title>RE-FRAMED [ Image Search ]</title>
 <!-- <meta name="description" content=""> -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://adichiara.github.io/reframed/adam/index.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RE-FRAMED [ by Adam ]">
+<meta property="og:title" content="RE-FRAMED [ Image Search ]">
 <meta property="og:description" content="RE-FRAMED: Like Framed, but different.">
 <meta property="og:image" content="reframed_logo.png">
 
@@ -21,17 +21,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="">
 <meta property="twitter:url" content="https://adichiara.github.io/reframed/adam/index.html">
-<meta name="twitter:title" content="RE-FRAMED [ by Adam ]">
+<meta name="twitter:title" content="RE-FRAMED [ Image Search ]">
 <meta name="twitter:description" content="RE-FRAMED: Like Framed, but different.">
 <meta name="twitter:image" content="reframed_logo.png">
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
 <body class="w3-container w3-auto">
-  <script>
-    var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Adam";
-  </script>
 
+  
   <div class="navbar">
     <div class="dropdown">
       <button class="dropbtn">RE-FRAMED
@@ -49,61 +47,28 @@
 
   <h5>
     <label for="movie_select">Movies:</label>
-    <select id='movie_select' name='movie_select'></select>
+    <select id='movie_select'  name='movie_select'></select>
   </h5>
 
-  <div class="w3-container">
+  <div class="container">
     <p id="output_area"></p>
   </div>
 
-  <div class="w3-container">
-    <div id='gallery'></div>
+  <div id='gallery' class="container">
+    <!-- <div id='gallery'></div> -->
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal_img">
+    <div class="caption" id="caption"></div>
   </div>
 
 
   <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/d3js/7.6.1/d3.min.js"></script>
   <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script type="text/JavaScript" src="../gallery.js"></script>
+  <script type="text/JavaScript" src="../gallery2.js"></script>
 
-
-
-  <style>
-    body {
-      background-color: black;
-    }
-
-    img {
-      padding: 2px;
-      border: 0px solid #000;
-      max-width: 400px;
-      height: auto;
-    }
-
-    p {
-      color: white;
-      font-size: 11;
-    }
-
-    /* 
-  img:hover {
-    box-shadow: 0 0 2px 2px rgba(0, 140, 186, 1);
-  } 
-  */
-
-    .selected {
-      padding: 0px;
-      border: 2px solid red;
-    }
-
-    .selected-list {
-      padding: 2px;
-      border: 0px solid black;
-      max-width: 75%;
-      height: auto;
-    }
-  </style>
-
-
+  
 </body>
-
 </html>
