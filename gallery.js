@@ -53,9 +53,9 @@ var path;
 			for (var i=0; i<selected_images.length; i++) {
 
         var img = document.createElement('img');
-        var id_name = url;
-        img.src = url;  
-        img.title = url;
+        var id_name = selected_images[i];
+        img.src = selected_images[i];  
+        img.title = selected_images[i];
         img.classList.add('img-responsive','image','selected-list');
 				$('#output_area').append(img);			
     
