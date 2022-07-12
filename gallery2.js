@@ -64,7 +64,7 @@ $(document).ready(function () {
 		
 		function copyLink(x) {
 			document.execCommand('copy');
-			console.log('copyLink');
+			console.log(x);
 		}
 
 		function showImages() {
@@ -105,6 +105,7 @@ $(document).ready(function () {
 						modal.style.display = "block";
 						modalImg.src = url;
 						captionText.innerHTML = url;
+						copyLink(url);
 						//selected_images.push(url);
 					}
 
