@@ -1,2 +1,109 @@
+<!DOCTYPE html>
+<html>
+<!-- HTML Meta Tags -->
+<title>RE-FRAMED [ by Adam ]</title>
+<!-- <meta name="description" content=""> -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	var selected_images = [];
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../style.css">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://adichiara.github.io/reframed/adam/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RE-FRAMED [ by Adam ]">
+<meta property="og:description" content="RE-FRAMED: Like Framed, but different.">
+<meta property="og:image" content="reframed_logo.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="">
+<meta property="twitter:url" content="https://adichiara.github.io/reframed/adam/index.html">
+<meta name="twitter:title" content="RE-FRAMED [ by Adam ]">
+<meta name="twitter:description" content="RE-FRAMED: Like Framed, but different.">
+<meta name="twitter:image" content="reframed_logo.png">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+<body class="w3-container w3-auto">
+  <script>
+    var source_url = "https://docs.google.com/spreadsheets/d/1ndqoeQOd6j8kwB0Mmyyx5jWezekSis5PGhWIv7m279s/gviz/tq?tqx=out:csv&sheet=Adam";
+  </script>
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">RE-FRAMED
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="../adam/index.html">[ by Adam ]</a>
+        <a href="../rishi/index.html">[ by Rishi ]</a>
+        <a href="../ameet/index.html">[ by Ameet ]</a>
+        <a href="../gary/index.html">[ by Gary ]</a>
+      </div>
+    </div>
+  </div>
+  <br></br>
+
+  <h5>
+    <label for="movie_select">Movies:</label>
+    <select id='movie_select' name='movie_select'></select>
+  </h5>
+
+  <div class="w3-container">
+    <p id="output_area"></p>
+  </div>
+
+  <div class="w3-container">
+    <div id='gallery'></div>
+  </div>
+
+
+  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/d3js/7.6.1/d3.min.js"></script>
+  <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/JavaScript" src="../gallery.js"></script>
+
+
+
+  <style>
+    body {
+      background-color: black;
+    }
+
+    img {
+      padding: 2px;
+      border: 0px solid #000;
+      max-width: 400px;
+      height: auto;
+    }
+
+    p {
+      color: white;
+      font-size: 11;
+    }
+
+    /* 
+  img:hover {
+    box-shadow: 0 0 2px 2px rgba(0, 140, 186, 1);
+  } 
+  */
+
+    .selected {
+      padding: 0px;
+      border: 2px solid red;
+    }
+
+    .selected-list {
+      padding: 2px;
+      border: 0px solid black;
+      max-width: 75%;
+      height: auto;
+    }
+  </style>
+
+
+</body>
+
+</html>
