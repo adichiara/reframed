@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	var start_id = 1362371;
 	var end_id = 1367493;
-	var end_id = start_id + 100; 
+	// var end_id = start_id + 100; 
 	var selected_images = [];
 
 	function copyLink(x) {
