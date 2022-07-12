@@ -1,8 +1,7 @@
 
 $(document).ready(function () {
-
-	var start_id = 1362371;
-	var end_id = 1367493;
+	var start_id = 1624760;
+	var end_id = 1628144;
 	// var end_id = start_id + 100; 
 	var selected_images = [];
 
@@ -48,6 +47,10 @@ var path;
 				$(this).addClass('selected');		
 				selected_images.push(url);
 			}
+			if ($(this).hasClass('selected-list')) {
+				$(this).removeClass('selected-list');
+				selected_images = selected_images.filter(item => item !== url)	
+			} 
 			
 		$('#output_area').empty();			
 			for (var i=0; i<selected_images.length; i++) {
