@@ -40,7 +40,7 @@ $(document).ready(function () {
 		var selected_images = [];
 				
 		
-			//populate archive dropdown
+		//populate archive dropdown
 		var mySelect = $('#movie_select');
 		$.each(titles, function(val, text) {
 			mySelect.append(
@@ -48,16 +48,15 @@ $(document).ready(function () {
 		});
 
 		// update image_links on change in dropdown selection
-		// update image_links on change in dropdown selection
 		$("#movie_select").change(function (event) {
 			selected_idx = parseInt($(this).val());
 			selected_title = dataset[selected_idx].title;
 			start_id = dataset[selected_idx].first_img;
 			end_id = dataset[selected_idx].last_img;
 			
-			console.log('selected_idx: ' + selected_idx);
-			console.log(selected_title);
-			console.log(start_id + ' to ' + end_id);
+// 			console.log('selected_idx: ' + selected_idx);
+// 			console.log(selected_title);
+// 			console.log(start_id + ' to ' + end_id);
 			showImages();
 		});
 		
@@ -73,7 +72,7 @@ $(document).ready(function () {
 			for (var i=start_id; i<=end_id; i++) {
 
 				var image_url_full = 'https://mvcdn.fancaps.net/' + i + '.jpg'
-				var image_url_full2 = 'https://cdni.fancaps.net/file/fancaps-movieimages/' + i + '.jpg'
+				//var image_url_full2 = 'https://cdni.fancaps.net/file/fancaps-movieimages/' + i + '.jpg'
 				var image_url_thumb = 'https://moviethumbs.fancaps.net/' + i + '.jpg'	
 
 				var img = document.createElement('img');
