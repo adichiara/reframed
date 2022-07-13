@@ -1,21 +1,22 @@
 
 $(document).ready(function () {
 
-	var source_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTp6Xd2r5F1yXL2CV-uWA54k2tRYmX8HhevL6tiRHBIwllLolN9hGTwvbpED4njAU130hq-2Gmbiewa/pub?gid=1772017644&single=true&output=csv';
-
+	var source_url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSzskwMAka_TYxIV33UEBLOrE2b46sPRd7oiKaxx5KC_kSUU_lKJpIkgPVB-iHV5LTH3LaDE-lwUQgm/pub?gid=150341003&single=true&output=csv';
+	
 	d3.csv(source_url, function(d) {
 //	 	console.log(d[0]);
 		d.id = +d.id;
 		d.title = d.title;
-		d.link = d.link;
-		d.first_img = +d.first_img;
-		d.last_img = +d.last_img;
+		d.prefix = d.prefix;
+		d.ext = d.ext;
+		d.first_image = +d.first_image;
+		d.last_image = +d.last_image;
 		
 		return d;
 		}).then(function(dataset) {
 			
-		console.log(dataset);		
-		console.log(dataset.length);
+		//console.log(dataset);		
+		console.log('Total dataset entries: ' + dataset.length);
 		
 		function getUniqueValues(d, key) {
 			var unique_set = [];
@@ -32,6 +33,8 @@ $(document).ready(function () {
 		var selected_title;
 		var start_id;
 		var end_id;
+		var prefix;
+		var ext;
 		
 		var modal = document.getElementById("myModal");
 		var modalImg = document.getElementById("modal_img");
@@ -51,12 +54,16 @@ $(document).ready(function () {
 		$("#movie_select").change(function (event) {
 			selected_idx = parseInt($(this).val());
 			selected_title = dataset[selected_idx].title;
-			start_id = dataset[selected_idx].first_img;
-			end_id = dataset[selected_idx].last_img;
+			start_id = dataset[selected_idx].first_image;
+			end_id = dataset[selected_idx].last_image;
+			prefix = dataset[selected_idx].prefix;
+			ext = dataset[selected_idx].ext;
 			
-// 			console.log('selected_idx: ' + selected_idx);
-// 			console.log(selected_title);
-// 			console.log(start_id + ' to ' + end_id);
+			console.log('------');
+			console.log('selected_idx: ' + selected_idx);
+			console.log(selected_title);
+			console.log(start_id + ' to ' + end_id);
+			
 			showImages();
 		});
 		
@@ -67,13 +74,16 @@ $(document).ready(function () {
 		}
 
 		function showImages() {
+		
+			$('#gallery').empty()
 			
 			//end_id = start_id + 50;
 			for (var i=start_id; i<=end_id; i++) {
 
-				var image_url_full = 'https://mvcdn.fancaps.net/' + i + '.jpg'
-				//var image_url_full2 = 'https://cdni.fancaps.net/file/fancaps-movieimages/' + i + '.jpg'
-				var image_url_thumb = 'https://moviethumbs.fancaps.net/' + i + '.jpg'	
+				var image_url_full = 'https://mvcdn.fancaps.net/' + i + '.jpg';
+// 				var image_url_full2 = 'https://cdni.fancaps.net/file/fancaps-movieimages/' + i + '.jpg';
+// 				var image_url_thumb = 'https://moviethumbs.fancaps.net/' + i + '.jpg';				 
+				var image_url_thumb = prefix + i + ext;		
 
 				var img = document.createElement('img');
 				var id_name = 'img_' + i;
