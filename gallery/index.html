@@ -50,18 +50,25 @@
     <select id='movie_select'  name='movie_select'></select>
   </h5>
 
+  <span class="sticky btn" id="show_selections_btn">
+    <h5>Show Selections</h5></span>
+    
   <div class="container">
     <p id="output_area"></p>
   </div>
 
-  <div id='gallery' class="container">
-    <!-- <div id='gallery'></div> -->
-  </div>
+  <div id='gallery' class="container"></div>
 
   <div id="myModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal_img">
-    <div class="caption" id="caption"></div>
+    <div class="'modal-header">
+      <span class="reset" id="reset">Reset</span>
+      <span class="close" id="close">&times;</span>
+    </div>
+    <div> 
+      <img class="modal-content modal-img" id="modal_img">
+      <div class="modal-content modal-selected" id="modal_selected"></div>    
+      <div class="caption" id="caption"></div>
+    </div>
   </div>
 
 
