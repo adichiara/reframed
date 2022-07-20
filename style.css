@@ -96,14 +96,6 @@ label {
   height: auto;
 } */
 
-.thumb {
-  padding: 2px;
-  border: 0px solid #000;
-  /* max-width: 500px; */
-  max-width: 100%;
-  height: auto;
-}
-
 .sticky {
   position: -webkit-sticky; /* Safari */
   position: sticky;
@@ -111,6 +103,7 @@ label {
 }
 
 .btn {
+  display: none;
   background-color: #04aa6d; /* Green */
   border: none;
   color: white;
@@ -137,6 +130,14 @@ label {
   justify-content: space-evenly;
 }
 
+.thumb {
+  padding: 2px;
+  border: 0px solid #000;
+  /* max-width: 500px; */
+  max-width: 100%;
+  height: auto;
+}
+
 .selected {
   padding: 0px;
   border: 2px solid red;
@@ -161,23 +162,40 @@ label {
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
-/* Modal Content (image) */
 .modal-content {
   margin: auto;
   display: block;
-  /* width: 90%; */
   max-width: 90%;
 }
 
-/* Modal Content (image) */
 .modal-selected {
+  position: relative;
   margin: auto;
   display: block;
-  /* width: 90%; */
   max-width: 90%;
 }
 
-/* Modal header */
+.modal-confirmed {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+}
+
+.zoom-img {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+}
+
+.img-confirmed {
+  position: relative;
+  margin: auto;
+  display: block;
+  max-width: 90%;
+}
+
 .modal-header {
   margin: auto;
   display: block;
@@ -185,7 +203,6 @@ label {
   height: 30px;
 }
 
-/* The Close Button */
 .close {
   color: #aaa;
   float: right;
@@ -200,9 +217,8 @@ label {
   cursor: pointer;
 }
 
-/* The Close Button */
 .reset {
-  display: none; /* Hidden by default */
+  display: none;
   color: #aaa;
   float: left;
   font-size: 14px;
@@ -218,11 +234,20 @@ label {
 
 .caption {
   margin: auto;
-  display: block;
   width: 80%;
   max-width: 700px;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
   height: 150px;
+}
+
+.overlay {
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  padding: 10px 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
 }
