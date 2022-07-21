@@ -50,28 +50,30 @@
     <select id='movie_select' name='movie_select'></select>
   </h5>
 
-  <h5 class='num-selected-text' id='num_selected_text'>0 images selected</h5>
-  <span class="show-btn" id="show_selections_btn">
-    <h5>Show selections</h5>
-  </span>
-  <span class="clear-btn" id="clear_selections_btn">
-    <h5>Clear selections</h5>
-  </span>
+  <div class="sticky">
+    <h5 class='num-selected-text' id='num_selected_text'>0 images selected</h5>
+    <span class="btn show-btn" id="show_selections_btn">
+      <h5>Show selections</h5>
+    </span>
+    <span class="btn clear-btn" id="clear_selections_btn">
+      <h5>Clear selections</h5>
+    </span>
+  </div>
     
   <div id='gallery' class="container"></div>
 
   <div id="myModal" class="modal">
     <div class="modal-header">
-      <span class="confirm" id="confirm">Confirm</span>
-      <span class="reset-btn" id="reset">Reset</span>
-      <span class="close-btn" id="close">&times;</span>
+      <span class="btn confirm-btn" id="confirm_btn"><h5>Confirm</h5></span>
+      <span class="btn reset-btn" id="reset_btn"><h5>Reset</h5></span>
+      <span class="btn close-btn" id="close_btn"><h5>Close</h5></span>
+      <span class="btn copy-btn" id="copy_btn"><h5>Copy</h5></span><h5>
     </div>
     <div> 
       <img class="zoom-img" id="zoom_img">
       <div class="caption" id="caption"></div>
       <div class="modal-selected" id="modal_selected"></div>  
       <div class="modal-results" id="modal_results">
-        <span class="copy-btn" id="copy_btn"><h5>Copy</h5></span>
         <table id='results_table'></table>
       </div>
 

@@ -38,13 +38,13 @@ $(document).ready(function () {
     var modal = document.getElementById("myModal");
     var zoomImg = document.getElementById("zoom_img");
     var modalSelected = document.getElementById("modal_selected");
-    var confirmButton = document.getElementById("confirm");
-    var resetButton = document.getElementById("reset");
-    var closeButton = document.getElementById("close");
+    var numSelectedText = document.getElementById("num_selected_text");
     var selectionsButton = document.getElementById("show_selections_btn");
     var clearButton = document.getElementById("clear_selections_btn");
+    var resetButton = document.getElementById("reset_btn");
+    var closeButton = document.getElementById("close_btn");
+    var confirmButton = document.getElementById("confirm_btn");
     var copyButton = document.getElementById("copy_btn");
-    var numSelectedText = document.getElementById("num_selected_text");
     var captionText = document.getElementById("caption");
     var modalResults = document.getElementById("modal_results");
     var resultsTable = document.getElementById("results_table");
@@ -77,6 +77,7 @@ $(document).ready(function () {
     function showImages() {
       $("#gallery").empty();
 
+      hideAllModalContent();
       clearSelections();
 
       //end_id = start_id + 50;
@@ -110,9 +111,17 @@ $(document).ready(function () {
         // select
         else {
           $(this).addClass("selected");
+
           modal.style.display = "block";
           zoomImg.style.display = "block";
+          closeButton.style.display = "block";
+          modalSelected.style.display = "none";
           captionText.style.display = "block";
+          resetButton.style.display = "none";
+          confirmButton.style.display = "none";
+          copyButton.style.display = "none";
+          resultsTable.style.display = "none";
+
           zoomImg.src = url;
           captionText.innerHTML = url;
           selected_images.push(url);
@@ -176,15 +185,9 @@ $(document).ready(function () {
         var div = document.getElementById(id_name);
         console.log(id_name);
 
-        // var url = $(this).attr("title");
-        // console.log("url " + $(this).attr("title"));
-        // console.log("h1 " + $(this).attr("h1"));
-
         // unselect
         if ($(this).hasClass("confirmed")) {
           console.log("already confirmed");
-          // $(this).removeClass("confirmed");
-          // confirmed_images = confirmed_images.filter((item) => item !== url);
         }
         // select
         else {
@@ -203,6 +206,7 @@ $(document).ready(function () {
       function showResultsTable() {
         $("#results_table").empty();
         modalResults.style.display = "block";
+        resultsTable.style.display = "block";
 
         for (var i = 0; i <= confirmed_images.length; i++) {
           var row = document.createElement("tr");
@@ -231,15 +235,13 @@ $(document).ready(function () {
         copyButton.addEventListener(
           "click",
           function () {
-            var urlField = document.querySelector("table");
-
+            console.log("copy clicked");
             // create a Range object
             var range = document.createRange();
             // set the Node to select the "range"
-            range.selectNode(urlField);
+            range.selectNode(resultsTable);
             // add the Range to the set of window selections
             window.getSelection().addRange(range);
-
             // execute 'copy', can't 'cut' in this case
             document.execCommand("copy");
           },
@@ -284,45 +286,39 @@ $(document).ready(function () {
         }
       }
 
-      $(document).on("click", "#reset", showSelections);
+      function hideAllModalContent() {
+        modal.style.display = "none";
+        zoomImg.style.display = "none";
+        closeButton.style.display = "none";
+        modalSelected.style.display = "none";
+        captionText.style.display = "none";
+        resetButton.style.display = "none";
+        confirmButton.style.display = "none";
+        copyButton.style.display = "none";
+        resultsTable.style.display = "none";
+      }
+
+      $(document).on("click", "#reset_btn", showSelections);
       $(document).on("click", "#show_selections_btn", showSelections);
       $(document).on("click", "#clear_selections_btn", clearSelections);
       $(document).on("click", ".modal-confirmed", markConfirmations);
 
-      zoomImg.onclick = function () {
-        modal.style.display = "none";
-        zoomImg.style.display = "none";
-        modalSelected.style.display = "none";
-        modalResults.style.display = "none";
-        resetButton.style.display = "none";
-        confirmButton.style.display = "none";
-        captionText.style.display = "none";
-        copyButton.style.display = "none";
-      };
+      // zoomImg.onclick = function () {
+      //   hideAllModalContent();
+      //   zoomImg.style.display = "block";
+      //   closeButton.style.display = "block";
+      // };
 
       closeButton.onclick = function () {
-        modal.style.display = "none";
-        zoomImg.style.display = "none";
-        modalSelected.style.display = "none";
-        modalResults.style.display = "none";
-        resetButton.style.display = "none";
-        confirmButton.style.display = "none";
-        captionText.style.display = "none";
-        copyButton.style.display = "none";
+        hideAllModalContent();
       };
 
-      resetButton.onclick = function () {
-        zoomImg.style.display = "none";
-        captionText.style.display = "none";
-        copyButton.style.display = "none";
-      };
+      // resetButton.onclick = function () {
+      //   hideAllModalContent();
+      // };
 
       confirmButton.onclick = function () {
-        zoomImg.style.display = "none";
-        confirmButton.style.display = "none";
-        resetButton.style.display = "none";
-        captionText.style.display = "none";
-        modalSelected.style.display = "none";
+        hideAllModalContent();
         modal.style.display = "block";
         modalResults.style.display = "block";
         copyButton.style.display = "block";

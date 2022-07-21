@@ -91,6 +91,13 @@ label {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
 .num-selected-text {
   color: white;
   font-size: 16px;
@@ -98,71 +105,68 @@ label {
   position: sticky;
 }
 
+.btn {
+  width: auto;
+  border: none;
+  color: white;
+  padding: 0px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .show-btn {
-  display: none;
-  background-color: #04aa6d; /* Green */
-  border: none;
-  color: white;
-  /* padding: 10px 32px; */
-  padding: 0px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-.clear-btn {
-  display: none;
-  background-color: #dd1f1f;
-  border: none;
-  color: white;
-  /* padding: 10px 32px; */
-  padding: 0px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-.copy-btn {
-  display: none;
-  background-color: #04aa6d; /* Green */
-  border: none;
-  color: white;
-  /* padding: 10px 32px; */
-  padding: 0px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
+  background-color: #04aa6d;
 }
 .show-btn:hover,
 .show-btn:focus {
   background-color: #008554;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.clear-btn {
+  background-color: #dd1f1f;
 }
 .clear-btn:hover,
 .clear-btn:focus {
   background-color: #b42020;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.copy-btn {
+  display: none;
+  background-color: #04aa6d;
 }
 .copy-btn:hover,
 .copy-btn:focus {
   background-color: #008554;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.close-btn {
+  display: none;
+  background-color: #aaa;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: #777;
+}
+
+.reset-btn {
+  display: none;
+  background-color: #dd1f1f;
+}
+.reset-btn:hover,
+.reset-btn:focus {
+  color: #b42020;
+}
+
+.confirm-btn {
+  display: none;
+  background-color: #04aa6d;
+}
+.confirm-btn:hover,
+.confirm-btn:focus {
+  color: #008554;
 }
 
 .container {
@@ -194,7 +198,7 @@ label {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /*Location of the box */
+  /* padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -204,10 +208,11 @@ label {
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
 }
 
-.modal-content {
+.zoom-img {
+  position: relative;
   margin: auto;
   display: block;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .modal-selected {
@@ -224,13 +229,6 @@ label {
   max-width: 90%;
 }
 
-.zoom-img {
-  position: relative;
-  margin: auto;
-  display: block;
-  max-width: 100%;
-}
-
 .img-confirmed {
   position: relative;
   margin: auto;
@@ -241,56 +239,10 @@ label {
 .modal-header {
   margin: auto;
   display: block;
-  max-width: 100%;
-  height: 30px;
+  /* max-width: 100%; */
+  /* height: 30px; */
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  /* padding: 5px; */
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #777;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.reset {
-  display: none;
-  color: #aaa;
-  /* padding: 5px; */
-  /* float: left; */
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.reset:hover,
-.reset:focus {
-  color: #777;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.confirm {
-  display: none;
-  color: #aaa;
-  /* padding: 5px; */
-  /* float: left; */
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.confirm:hover,
-.confirm:focus {
-  color: #777;
-  text-decoration: none;
-  cursor: pointer;
-}
 .caption {
   margin: auto;
   width: 80%;
@@ -316,7 +268,7 @@ table {
   background-color: white;
   color: black;
   border-collapse: collapse;
-  max-width: 50%;
+  max-width: 100%;
 }
 td,
 th {
