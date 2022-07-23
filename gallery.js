@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				zoom_img.src = full_urls[id_num];
 				caption.innerHTML = full_urls[id_num];
 
+				// window.scrollTo(0, 200);
+
 				show_selections_btn.style.display = 'none';
 				clear_selections_btn.style.display = 'none';
 				reset_btn.style.display = 'none';
