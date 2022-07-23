@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		});
 
 		function showImages() {
+			gallery.replaceChildren();
+
 			for (var i = start_id; i < end_id; i++) {
 				var thumb_url = thumb_prefix + i + ext;
 				var full_url = full_prefix + i + ext;

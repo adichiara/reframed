@@ -98,7 +98,7 @@ label {
 }
 .movie-select {
 	width: 40ch;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 /* Gallery  */
