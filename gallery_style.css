@@ -93,6 +93,12 @@ label {
 /* Select box */
 .select-box {
 	padding: 5px;
+	width: 45ch;
+	overflow: hidden;
+}
+.movie-select {
+	width: 40ch;
+	overflow: hidden;
 }
 
 /* Gallery  */
@@ -199,7 +205,7 @@ table {
 	background-color: white;
 	color: black;
 	border-collapse: collapse;
-	max-width: 100%;
+	max-width: 90%;
 }
 td,
 th {

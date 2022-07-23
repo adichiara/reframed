@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 		var selected_ids = [];
 		var confirmed_urls = [];
+		var scroll_div;
 
 		var thumb_urls = [];
 		var full_urls = [];
@@ -94,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				img.title = full_url;
 				img.classList.add('img-responsive', 'thumb-img');
 				img.onclick = function () {
-					var id_num = this.getAttribute('id').replace('thumb_', '');
+					var id_name = this.getAttribute('id');
+					scroll_div = id_name;
+					console.log('scroll_div: ' + scroll_div);
+					var id_num = id_name.replace('thumb_', '');
 					showZoomImg(id_num);
 				};
 				div.append(img);
@@ -114,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				zoom_img.src = full_urls[id_num];
 				caption.innerHTML = full_urls[id_num];
 
-				// window.scrollTo(0, 200);
+				window.scrollTo(0, 200);
 
 				show_selections_btn.style.display = 'none';
 				clear_selections_btn.style.display = 'none';
@@ -268,6 +272,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			reset_btn.style.display = 'none';
 			copy_btn.style.display = 'none';
 			close_btn.style.display = 'none';
+			document
+				.getElementById(scroll_div)
+				.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		};
 
 		zoom_img.onclick = function () {
@@ -283,6 +290,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			reset_btn.style.display = 'none';
 			copy_btn.style.display = 'none';
 			close_btn.style.display = 'none';
+			document
+				.getElementById(scroll_div)
+				.scrollIntoView({ behavior: 'smooth', block: 'center' });
 		};
 	});
 });
