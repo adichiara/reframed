@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				full_urls.push(full_url);
 
 				var div = document.createElement('div');
-				div.classList.add('col', 'p-1', 'm-0', 'thumb-img');
+				div.classList.add('col', 'p-1', 'm-0', 'thumb-div');
 
 				var img = document.createElement('img');
 				img.id = 'thumb_' + idx;
