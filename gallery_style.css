@@ -124,6 +124,7 @@ label {
 }
 .zoom-img {
 	display: none;
+	max-width: 1200px;
 	/* max-height: 80%; */
 }
 
@@ -138,10 +139,12 @@ label {
 	display: none;
 }
 .selected-row {
-	max-width: 100%;
+	max-width: 90%;
+	height: auto;
 }
 .selected-img {
 	max-width: 100%;
+	height: auto;
 	padding: 0px;
 	border: 2px solid black;
 }
@@ -155,6 +158,28 @@ label {
 	/* padding: 10px 20px; */
 	/* background: rgb(0, 0, 0); */
 	/* background: rgba(0, 0, 0, 0.5); */
+}
+
+/* Confirm screen */
+
+.confirmed-row {
+	max-width: 350%;
+}
+
+/* Table */
+
+table {
+	font-family: arial, sans-serif;
+	background-color: white;
+	color: black;
+	border-collapse: collapse;
+	max-width: 90%;
+}
+td,
+th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 /* Buttons */
@@ -189,6 +214,11 @@ label {
 	background-color: green;
 	color: white;
 }
+.back-btn {
+	display: none;
+	background-color: dimgray;
+	color: white;
+}
 .close-btn {
 	display: none;
 	background-color: rgb(78, 76, 76);
@@ -204,20 +234,4 @@ label {
 .confirmed {
 	padding: 0px;
 	border: 2px solid red;
-}
-
-/* Table */
-
-table {
-	font-family: arial, sans-serif;
-	background-color: white;
-	color: black;
-	border-collapse: collapse;
-	max-width: 90%;
-}
-td,
-th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
 }

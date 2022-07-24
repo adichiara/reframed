@@ -30,20 +30,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		var zoom_img = document.getElementById('zoom_img');
 		var caption = document.getElementById('caption');
 		var selections_screen = document.getElementById('selections_screen');
-		var results_table = document.getElementById('results_table');
 
 		var show_selections_btn = document.getElementById('show_selections_btn');
 		var clear_selections_btn = document.getElementById('clear_selections_btn');
 		var confirm_btn = document.getElementById('confirm_btn');
 		var reset_btn = document.getElementById('reset_btn');
 		var copy_btn = document.getElementById('copy_btn');
+		var back_btn = document.getElementById('back_btn');
 		var close_btn = document.getElementById('close_btn');
 
 		var titles = getUniqueValues(dataset, 'title');
 
 		var selected_ids = [];
 		var confirmed_urls = [];
-		var scroll_div;
+		var scroll_div = 'thumb_1';
 
 		var thumb_urls = [];
 		var full_urls = [];
@@ -122,14 +122,17 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 				window.scrollTo(0, 200);
 
+				gallery.style.display = 'none';
+				zoom_img.style.display = 'block';
+				zoom_div.style.display = 'block';
+				selections_screen.style.display = 'none';
+				results_screen.style.display = 'none';
 				show_selections_btn.style.display = 'none';
 				clear_selections_btn.style.display = 'none';
+				confirm_btn.style.display = 'none';
 				reset_btn.style.display = 'none';
-				gallery.style.display = 'none';
-				selections_screen.style.display = 'none';
-
-				zoom_div.style.display = 'block';
-				zoom_img.style.display = 'block';
+				copy_btn.style.display = 'none';
+				back_btn.style.display = 'none';
 				close_btn.style.display = 'inline-block';
 
 				this_thumb.classList.add('selected');
@@ -137,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			}
 		}
 
-		var showSelections = function () {
+		function showSelections() {
 			if (selected_ids.length > 0) {
 				selections_screen.replaceChildren();
 				confirmed_urls = [];
@@ -179,25 +182,39 @@ document.addEventListener('DOMContentLoaded', function (event) {
 					selections_screen.append(div);
 				}
 
+				window.scrollTo(0, 200);
 				gallery.style.display = 'none';
 				zoom_img.style.display = 'none';
 				zoom_div.style.display = 'none';
 				selections_screen.style.display = 'inline-block';
 				results_screen.style.display = 'none';
-				results_table.style.display = 'none';
 				show_selections_btn.style.display = 'none';
 				clear_selections_btn.style.display = 'none';
 				confirm_btn.style.display = 'inline-block';
 				reset_btn.style.display = 'inline-block';
 				copy_btn.style.display = 'none';
+				back_btn.style.display = 'none';
 				close_btn.style.display = 'inline-block';
 			}
-		};
+		}
 
-		confirm_btn.onclick = function () {
+		function confirmSelections() {
 			console.log(confirmed_urls);
 			if (confirmed_urls.length > 0) {
-				results_table.replaceChildren();
+				results_screen.replaceChildren();
+
+				for (const this_url of confirmed_urls) {
+					var div = document.createElement('div');
+					div.classList.add('row', 'p-3', 'm-0', 'confirmed-row');
+
+					var img = document.createElement('img');
+					img.classList.add('selected-img', 'img-responsive');
+					img.src = this_url;
+					div.append(img);
+					results_screen.append(div);
+				}
+
+				var results_table = document.createElement('table');
 
 				for (var i = 0; i <= confirmed_urls.length; i++) {
 					var row = document.createElement('tr');
@@ -223,17 +240,20 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				url.innerHTML = confirmed_urls[confirmed_urls.length - 1];
 				results_table.append(last_row);
 
+				results_screen.append(results_table);
+
+				window.scrollTo(0, 200);
 				gallery.style.display = 'none';
 				zoom_img.style.display = 'none';
 				zoom_div.style.display = 'none';
 				selections_screen.style.display = 'none';
 				results_screen.style.display = 'block';
-				results_table.style.display = 'block';
 				show_selections_btn.style.display = 'none';
 				clear_selections_btn.style.display = 'none';
 				confirm_btn.style.display = 'none';
 				reset_btn.style.display = 'none';
 				copy_btn.style.display = 'inline-block';
+				back_btn.style.display = 'inline-block';
 				close_btn.style.display = 'inline-block';
 
 				copy_btn.onclick = function () {
@@ -243,13 +263,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
 					document.execCommand('copy');
 				};
 			}
-		};
+		}
 
 		show_selections_btn.onclick = function () {
 			showSelections();
 		};
 
 		reset_btn.onclick = function () {
+			showSelections();
+		};
+
+		confirm_btn.onclick = function () {
+			confirmSelections();
+		};
+
+		back_btn.onclick = function () {
 			showSelections();
 		};
 
@@ -267,12 +295,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			zoom_div.style.display = 'none';
 			selections_screen.style.display = 'none';
 			results_screen.style.display = 'none';
-			results_table.style.display = 'none';
 			show_selections_btn.style.display = 'inline-block';
 			clear_selections_btn.style.display = 'inline-block';
 			confirm_btn.style.display = 'none';
 			reset_btn.style.display = 'none';
 			copy_btn.style.display = 'none';
+			back_btn.style.display = 'none';
 			close_btn.style.display = 'none';
 			document
 				.getElementById(scroll_div)
@@ -285,12 +313,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			zoom_div.style.display = 'none';
 			selections_screen.style.display = 'none';
 			results_screen.style.display = 'none';
-			results_table.style.display = 'none';
 			show_selections_btn.style.display = 'inline-block';
 			clear_selections_btn.style.display = 'inline-block';
 			confirm_btn.style.display = 'none';
 			reset_btn.style.display = 'none';
 			copy_btn.style.display = 'none';
+			back_btn.style.display = 'none';
 			close_btn.style.display = 'none';
 			document
 				.getElementById(scroll_div)
