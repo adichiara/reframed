@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		var zoom_img = document.getElementById('zoom_img');
 		var caption = document.getElementById('caption');
 		var selections_screen = document.getElementById('selections_screen');
+		var results_screen = document.getElementById('results_screen');
 
 		var show_selections_btn = document.getElementById('show_selections_btn');
 		var clear_selections_btn = document.getElementById('clear_selections_btn');
@@ -146,29 +147,30 @@ document.addEventListener('DOMContentLoaded', function (event) {
 				confirmed_urls = [];
 
 				for (const idx of selected_ids) {
-					var div = document.createElement('div');
-					div.classList.add('row', 'p-3', 'm-0', 'selected-row');
+					var outer_div = document.createElement('div');
+					outer_div.classList.add('selected-outer-div');
 
 					var overlay = document.createElement('div');
-					overlay.classList.add('col-1', 'overlay');
-					div.append(overlay);
+					overlay.classList.add('overlay');
+					outer_div.append(overlay);
 
 					var img_div = document.createElement('div');
-					img_div.classList.add('col-11');
+					img_div.classList.add('selected-img-div');
 					var img = document.createElement('img');
 					img.classList.add('selected-img', 'img-responsive');
 					img.src = full_urls[idx];
 					img.id = 'img_' + idx;
 					// img.style.maxWidth = '100%';
 					img_div.append(img);
-					div.append(img_div);
+					outer_div.append(img_div);
 
-					div.onclick = function () {
+					outer_div.onclick = function () {
 						console.log(this);
 						var this_num = this.childNodes[0];
 						var this_img = this.childNodes[1].childNodes[0];
 						var idx = this_img.getAttribute('id').replace('img_', '');
 						console.log(idx);
+						console.log(this.classList);
 
 						if (this_img.classList.contains('confirmed')) {
 							console.log('confirmed');
@@ -179,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 						}
 						console.log(this);
 					};
-					selections_screen.append(div);
+					selections_screen.append(outer_div);
 				}
 
 				window.scrollTo(0, 200);
